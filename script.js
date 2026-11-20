@@ -4,6 +4,7 @@ var prerequis_up1 = 10
 
 var Nombre_cookie = document.getElementById("le_cookie")
 Nombre_cookie.addEventListener("click", le_click)
+Nombre_cookie.addEventListener("mouseover", update_cookie)
 
 var upgrade1 = document.getElementById("upgrade1")
 upgrade1.addEventListener("click", upgrade1_click)
@@ -26,6 +27,7 @@ function upgrade1_click(evenement) {
     //boost de 2 click
     if (compteur_cookie >= prerequis_up1) {
         click_base = click_base + 2;
+        compteur_cookie -= prerequis_up1;
         evenement.target.innerHTML = "Amélioration achetée !";
         setTimeout(() => {
             evenement.target.innerHTML = "le clique est de " + click_base + " par clique";
@@ -51,4 +53,8 @@ function upgrade1_click(evenement) {
 
 function prix_upgrade1(evenement) {
     evenement.target.innerHTML = "l'amélioration coute " + prerequis_up1 + " cookie";
+}
+
+function update_cookie(evenement) {
+    evenement.target.innerHTML = compteur_cookie + " cookie"
 }

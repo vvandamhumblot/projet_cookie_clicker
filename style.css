@@ -28,6 +28,12 @@
     height:600px;
 }
 
+#upgrade1 {
+    background-color: rgba(131, 68, 68, 0.274);
+    width: 90%;
+    transform: translate(6%, 0%);
+}
+
 #game {
     display: flex;
     flex-direction: row;
