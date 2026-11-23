@@ -13,3 +13,10 @@ et utilisation de mozilla devlopper
 j'espère que ça va vous plaire ^^
 
 encore en version de test mais devrait marcher sans aucun problème 
+
+ajout du 23/11/2026 :
+
+- ajout de la puissance du clique actuelle
+- ajout de l'upgrade n°3
+
+
