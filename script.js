@@ -1,6 +1,7 @@
 var compteur_cookie = 0
 var click_base = 1
 var prerequis_up1 = 10
+var prerequis_up2 = 125
 
 var Nombre_cookie = document.getElementById("le_cookie")
 Nombre_cookie.addEventListener("click", le_click)
@@ -15,13 +16,23 @@ prix_upg1.addEventListener("mouseover", prix_upgrade1)
 var upgrade2 = document.getElementById("upgrade2")
 upgrade2.addEventListener("click", upgrade2_click)
 
+var prix_upg2 = document.getElementById("prix-up2")
+prix_upg2.addEventListener("mouseover", prix_upgrade2)
+
+var total_click = document.getElementById("click-totale")
+total_click.addEventListener("mouseover", update_click)
+
 var upgrade3 = document.getElementById("upgrade3")
 upgrade3.addEventListener("click", upgrade3_click)
+
+// function du compteur du cookie
 
 function le_click(evenement) {
     compteur_cookie += click_base
     evenement.target.innerHTML = compteur_cookie + " cookie";
 }
+
+//upgrade n°1
 
 function upgrade1_click(evenement) {
     //boost de 2 click
@@ -57,4 +68,45 @@ function prix_upgrade1(evenement) {
 
 function update_cookie(evenement) {
     evenement.target.innerHTML = compteur_cookie + " cookie"
+}
+
+// upgrade n°2
+
+function upgrade2_click(evenement) {
+    // boost de 10 click
+    if (compteur_cookie >= prerequis_up2){
+        click_base = click_base + 10;
+        compteur_cookie -= prerequis_up2
+        setTimeout(() => {
+            evenement.target.innerHTML = "le clique est de " + click_base + " par clique";
+        }, 5000);
+        prerequis_up2 = prerequis_up2 * 2;
+        setTimeout(() => {
+            evenement.target.innerHTML = "l'amélioration coute " + prerequis_up2 + " cookie";
+        }, 5000);
+        setTimeout(() => {
+            evenement.target.innerHTML = "Amélioration 2";
+        }, 5000);
+    } else {
+        evenement.target.innerHTML = "vous n'avez pas assez de cookie !!";
+        setTimeout(() => {
+            evenement.target.innerHTML = "l'amélioration coute " + prerequis_up2 + "cookie";
+        }, 5000);
+        setTimeout(() => {
+            evenement.target.innerHTML = "Amélioration 2";
+        }, 5000);
+    };
+
+};
+
+function prix_upgrade2(evenement) {
+    evenement.target.innerHTML = "l'amélioration coute " + prerequis_up2 + " cookie";
+}
+
+function update_cookie(evenement) {
+    evenement.target.innerHTML = compteur_cookie + " cookie";
+}
+
+function update_click(evenement) {
+    evenement.target.innerHTML = "puissance du click : " + click_base;
 }
