@@ -19,4 +19,7 @@ ajout du 23/11/2026 :
 - ajout de la puissance du clique actuelle
 - ajout de l'upgrade n°3
 
+ajout du 24/11/2026 : 
 
+- modification du fond site 
+- ajout de petite image pour réprensenter les amélioration 
