@@ -1,6 +1,6 @@
 #titre {
     color: brown;
-    background-color: blanchedalmond;
+    background-color: pink;
     text-align: center;
     height: 75px;
 }
@@ -12,7 +12,7 @@
 
 #le_cookie {
     text-align: center;
-    background-color:rgba(25, 0, 255, 0.274);
+    background-color:rgba(131, 68, 68, 0.274);
     background-image: url("image_cookie/PerfectCookie.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -25,7 +25,7 @@
     text-align: center;
     background-color:rgba(131, 68, 68, 0.274);
     width: 35%;
-    height:600px;
+    height:625px;
 }
 
 #upgrade1 {
@@ -46,14 +46,49 @@
     transform: translate(6%, 0%);
 }
 
+#upgrade1,
+#upgrade2,
+#upgrade3 {
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    grid-template-areas:
+        "image title"
+        "image price";
+    align-items: center;
+}
+
+#upgrade1,
+#upgrade2,
+#upgrade3 {
+    margin-bottom: 10px;
+}
+
+#upgrade1 h2, #upgrade2 h2, #upgrade3 h2 {
+    grid-area: title;
+    margin: 4px 8px;
+}
+
+#upgrade1 h5, #upgrade2 h5, #upgrade3 h5 {
+    grid-area: price;
+    margin: 4px 8px;
+}
+
 #game {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 5%;
-    background-color:rgba(0, 255, 0, 0.274);
+    background: linear-gradient(pink, blue, pink);
     width: 100%;
     height: 1200px;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
+}
+
+.upgrade_img {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    padding: 0;
 }
